@@ -1,0 +1,29 @@
+{
+  "name": "datagrid-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "clean": "rm -rf build && mkdir build",
+    "build-server": "babel -d ./build ./server -s",
+    "build": "npm run clean && npm run build-server",
+    "start": "pm2 start ./build/app.js -i ${NODE_PROCESSES} --name 'cp.server' --no-daemon",
+    "dev": "nodemon --exec babel-node app.js"
+  },
+  "private": true,
+  "license": "Commercial",
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-preset-env": "^1.6.1",
+    "compression": "^1.6.2",
+    "express": "^4.16.2",
+    "morgan": "^1.8.1"
+  },
+  "devDependencies": {
+    "eslint": "^4.12.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "nodemon": "^1.12.5"
+  }
+}
