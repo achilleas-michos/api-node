@@ -1,6 +1,6 @@
 import path from "path";
 
-interface ConfigType {
+interface IconfigType {
     env: string;
     root: string;
     ip: string;
@@ -8,7 +8,7 @@ interface ConfigType {
     secrets: string;
 }
 
-const config: ConfigType = {
+const config: IconfigType = {
     // Current run environment
     env: process.env.NODE_ENV || "development",
 

@@ -1,18 +1,18 @@
 import express from "express";
 
-const getData = function getData(req: express.Request, res: express.Response, next: express.NextFunction) {
+const getData = (req: express.Request, res: express.Response, next: express.NextFunction) => {
   return res.json([
     {
-      category: "Sporting Goods", price: "$49.99", stocked: true, name: "Football"
+      category: "Sporting Goods", name: "Football", price: "$49.99", stocked: true
     },
     {
-      category: "Sporting Goods", price: "$9.99", stocked: true, name: "Baseball"
+      category: "Sporting Goods", name: "Baseball", price: "$9.99", stocked: true
     },
     {
-      category: "Sporting Goods", price: "$29.99", stocked: false, name: "Basketball"
+      category: "Sporting Goods", name: "Basketball", price: "$29.99", stocked: false
     },
     {
-      category: "Electronics", price: "$99.99", stocked: true, name: "iPod Touch"
+      category: "Electronics", name: "iPod Touch", price: "$99.99", stocked: true
     }
   ]);
 };

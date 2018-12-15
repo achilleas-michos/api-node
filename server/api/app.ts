@@ -1,7 +1,7 @@
 import express from "express";
 import { config } from "./config/configuration";
-import { logger } from "./config/wiston-logger";
 import { configureExpress } from "./config/express";
+import { logger } from "./config/wiston-logger";
 import { setupRoutes } from "./routes";
 
 class App {

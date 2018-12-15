@@ -1,16 +1,13 @@
 # Build
 FROM        node:11.4.0-alpine as builder
 
-COPY        package.json /base/
-WORKDIR     /base/
+COPY        package.json /web.api/
+WORKDIR     /web.api/
 
 RUN         yarn install --production
-COPY        .babelrc /base/
-#COPY        .eslintrc /base/
-COPY        api/app.js /base/server/
-COPY        api/routes.js /base/server/
-COPY        api /base/server/api/
-COPY        api/config /base/server/config/
+COPY        tsconfig.json /web.api/
+COPY        tslint.json /web.api/
+COPY        api /web.api/api/
 RUN         yarn run build
 
 # Deploy
@@ -33,10 +30,10 @@ RUN         npm install -g pm2@3.2.3
 
 
 # Copy over code
-WORKDIR     /base/web.api/
-COPY        --from=builder /base/build /base/web.api/build
-COPY        --from=builder /base/node_modules /base/web.api/node_modules
-COPY        --from=builder /base/package.json /base/web.api/package.json
+WORKDIR     /web.api/
+COPY        --from=builder /web.api/dist /web.api/dist
+COPY        --from=builder /web.api/node_modules /web.api/node_modules
+COPY        --from=builder /web.api/package.json /web.api/package.json
 
 EXPOSE      8080
 CMD         ["tini", "--", "npm", "start"]

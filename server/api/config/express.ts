@@ -3,8 +3,8 @@ import compression from "compression";
 import express from "express";
 import helmet from "helmet";
 import morgan from "morgan";
-import { loggerStream } from "./wiston-logger";
 import { config } from "./configuration";
+import { loggerStream } from "./wiston-logger";
 
 const configureExpress = (app: express.Application) => {
   app.use(compression());
@@ -18,7 +18,8 @@ const configureExpress = (app: express.Application) => {
       // Request methods you wish to allow
       res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, PATCH, DELETE");
       // Request headers you wish to allow
-      res.setHeader("Access-Control-Allow-Headers", "X-Requested-With, Content-type, Authorization, Cache-control, Pragma");
+      res.setHeader("Access-Control-Allow-Headers", "X-Requested-With, Content-type, Authorization, " +
+          "Cache-control, Pragma");
       // Pass to next layer of middleware
       next();
     });
@@ -32,7 +33,8 @@ const configureExpress = (app: express.Application) => {
       // Request methods you wish to allow
       res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, PATCH, DELETE");
       // Request headers you wish to allow
-      res.setHeader("Access-Control-Allow-Headers", "X-Requested-With, Content-type, Authorization, Cache-control, Pragma");
+      res.setHeader("Access-Control-Allow-Headers", "X-Requested-With, Content-type, Authorization, " +
+          "Cache-control, Pragma");
       // Pass to next layer of middleware
       next();
     });
