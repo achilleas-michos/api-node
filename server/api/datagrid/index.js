@@ -1,5 +1,5 @@
 import express from 'express';
-import { getData } from "./datagrid.controller";
+import { getData } from './datagrid.controller';
 
 const datagridRouter = express.Router();
 

@@ -1,4 +1,3 @@
-'use strict';
 import path from 'path';
 
 const config = {
@@ -9,7 +8,7 @@ const config = {
   ip: process.env.OPENSHIFT_NODEJS_IP || process.env.IP || undefined,
 
   // Server port
-  port: process.env.OPENSHIFT_NODEJS_PORT ||  process.env.PORT || 8080,
+  port: process.env.OPENSHIFT_NODEJS_PORT || process.env.PORT || 8080,
 
   // Secret for session, you will want to change this and make it an environment variable
   secrets: {

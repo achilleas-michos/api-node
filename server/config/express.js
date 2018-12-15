@@ -1,9 +1,7 @@
-/**
- * Express configuration
- */
 import compression from 'compression';
 import bodyParser from 'body-parser';
 import morgan from 'morgan';
+import helmet from 'helmet';
 
 module.exports = (app) => {
   const env = app.get('env');
@@ -23,10 +21,10 @@ module.exports = (app) => {
       next();
     });
     app.use(morgan('combined'));
+    app.use(helmet());
   }
 
   if (env === 'development' || env === 'test') {
-    console.log('Env:', env);
     // Add headers for CORS
     app.use((req, res, next) => {
       // Website you wish to allow to connect
