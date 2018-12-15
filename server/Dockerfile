@@ -7,10 +7,10 @@ WORKDIR     /base/
 RUN         yarn install --production
 COPY        .babelrc /base/
 #COPY        .eslintrc /base/
-COPY        app.js /base/server/
-COPY        routes.js /base/server/
+COPY        api/app.js /base/server/
+COPY        api/routes.js /base/server/
 COPY        api /base/server/api/
-COPY        config /base/server/config/
+COPY        api/config /base/server/config/
 RUN         yarn run build
 
 # Deploy
@@ -20,6 +20,7 @@ LABEL       "maintainer"="Achilleas Michos <achilleas.michos@gmail.com"
 LABEL       "description"="This is the Docker container that will provide all web API services for the app"
 
 ENV         HTTP_MODE http
+ENV         NODE_ENV="production"
 ARG         NODE_PROCESSES=2
 ENV         NODE_PROCESSES=$NODE_PROCESSES
 

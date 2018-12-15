@@ -4,27 +4,38 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "clean": "rm -rf build && mkdir build",
-    "build-server": "babel -d ./build ./server -s",
-    "build": "npm run clean && npm run build-server",
-    "start": "pm2 start ./build/app.js -i ${NODE_PROCESSES} --name 'cp.server' --no-daemon",
-    "dev": "nodemon --exec babel-node app.js"
+    "clean": "rimraf dist/*",
+    "lint": "tslint -c tslint.json -p tsconfig.json --fix",
+    "tsc": "tsc -p .",
+    "build": "npm-run-all clean lint tsc",
+    "start": "pm2 start ./dist/app.js -i ${NODE_PROCESSES} --name 'web.api' --no-daemon",
+    "dev": "nodemon --watch api -e ts --exec ts-node ./api/app.ts"
   },
   "private": true,
   "license": "Commercial",
   "dependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-plugin-transform-object-rest-spread": "^6.23.0",
-    "babel-preset-env": "^1.6.1",
+    "@types/body-parser": "1.17.0",
+    "@types/compression": "0.0.36",
+    "@types/express": "4.16.0",
+    "@types/helmet": "0.0.42",
+    "@types/morgan": "1.7.35",
+    "@types/winston": "2.4.4",
+    "body-parser": "1.18.3",
     "compression": "^1.6.2",
-    "express": "^4.16.2",
+    "express": "4.16.4",
     "helmet": "3.15.0",
-    "morgan": "^1.8.1"
+    "morgan": "^1.8.1",
+    "npm-run-all": "4.1.5",
+    "winston": "3.1.0"
   },
   "devDependencies": {
+    "@types/node": "10.12.15",
     "eslint": "^4.12.1",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.8.0",
-    "nodemon": "^1.12.5"
+    "nodemon": "1.18.9",
+    "ts-node": "7.0.1",
+    "tslint": "5.11.0",
+    "typescript": "3.2.2"
   }
 }
