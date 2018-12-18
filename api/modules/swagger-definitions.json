@@ -1,0 +1,4 @@
+{
+  "User": { "$ref": "./users/swagger-definitions.json"}
+}
+

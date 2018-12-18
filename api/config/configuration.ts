@@ -1,6 +1,8 @@
-import path from "path";
+import * as path from "path";
 
-interface IconfigType {
+interface IConfigType {
+    apiBase: string;
+    host: string;
     env: string;
     root: string;
     ip: string;
@@ -8,7 +10,11 @@ interface IconfigType {
     secrets: string;
 }
 
-const config: IconfigType = {
+const config: IConfigType = {
+    apiBase: process.env.API_BASE  || "/api",
+
+    host: process.env.HOST_NAME || "localhost",
+
     // Current run environment
     env: process.env.NODE_ENV || "development",
 
@@ -25,4 +31,4 @@ const config: IconfigType = {
     secrets: process.env.SESSION_SECRET || "demo-secret"
 };
 
-export { config };
+export { IConfigType, config };
