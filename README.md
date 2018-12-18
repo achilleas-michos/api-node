@@ -2,14 +2,13 @@
 
 ## Swagger
 
-** splitting the config file **
-
+**Json file references**
 https://apihandyman.io/writing-openapi-swagger-specification-tutorial-part-8-splitting-specification-file/
 
 ## Deployment
-docker build -t datagrid.api .
+docker build -t web.api .
 
 **Default configuration**
 
-docker run -d --name datagrid-api -p 8080:8080 -it datagrid.api
+docker run -d --name web-api -p 8080:8080 -it web.api
 
