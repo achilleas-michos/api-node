@@ -42,7 +42,7 @@ const edit = (req: express.Request, res: express.Response, next: express.NextFun
     let newEntry = {};
     usersList.forEach((item, index) => {
         if (item.id === Number(req.params.id)) {
-            if("id" in req.body) delete req.body.id;
+            if ("id" in req.body) { delete req.body.id; }
             item = {...item, ...req.body};
             newEntry = item;
         }

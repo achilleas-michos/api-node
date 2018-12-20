@@ -56,13 +56,13 @@ describe("POST /user - Edit existing user's data", () => {
             .send({email: "changed-email@gmail.com", firstName: "Changed-name", lastName: "Changed-last"})
             .set("Accept", "application/json")
             .expect("Content-Type", "application/json; charset=utf-8")
-            .expect({email: "changed-email@gmail.com", firstName: "Changed-name", id:2, lastName: "Changed-last"})
+            .expect({email: "changed-email@gmail.com", firstName: "Changed-name", id: 2, lastName: "Changed-last"})
             .expect(200, done);
     });
     it("Edit one property", (done) => {
         supertest(app)
             .post("/api/user/1")
-            .send({"email": "changed-email@gmail.com"})
+            .send({email: "changed-email@gmail.com"})
             .set("Accept", "application/json")
             .expect("Content-Type", "application/json; charset=utf-8")
             .expect({ email: "changed-email@gmail.com", firstName: "John",  id: 1, lastName: "Doe" })
