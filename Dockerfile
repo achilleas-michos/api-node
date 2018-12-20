@@ -1,11 +1,12 @@
 # Build
 FROM        node:11.4.0-alpine as builder
 
-WORKDIR     /web.api/
 COPY        package.json /web.api/
 COPY        tsconfig.json /web.api/
 COPY        tslint.json /web.api/
-COPY        api /web.api/api/
+COPY        typings.d.ts /web.api/
+COPY        api/ /web.api/api/
+WORKDIR     /web.api/
 
 RUN         yarn install --production
 RUN         yarn run build
