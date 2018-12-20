@@ -1,4 +1,5 @@
 {
-  "/users": { "$ref": "./users/swagger-paths.json"}
+  "/user/{id}": { "$ref": "./users/endpoints-id.json"},
+  "/user": { "$ref": "./users/endpoints.json"}
 }
 

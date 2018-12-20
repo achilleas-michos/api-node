@@ -8,7 +8,7 @@ import { logger } from "./config/wiston-logger";
 import { usersRouter } from "./modules/users/index";
 
 const setupRoutes = (app: express.Application) => {
-  app.use("/api/", usersRouter);
+  app.use("/api", usersRouter);
 
   let swaggerFile = fs.readFileSync(path.join(config.root, "swagger.json"), "utf-8");
 

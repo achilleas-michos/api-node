@@ -7,5 +7,10 @@
   "rules": {
     "trailing-comma": [ false ]
   },
-  "rulesDirectory": []
+  "rulesDirectory": [],
+  "linterOptions": {
+    "exclude": [
+      "./api/**/*.json"
+    ]
+  }
 }

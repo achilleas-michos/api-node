@@ -1,0 +1,21 @@
+{
+  "title": "System user description",
+  "properties": {
+    "email": {
+      "type": "string",
+      "pattern": ".+@.+"
+    },
+    "firstName": {
+      "type": "string",
+      "pattern": "[a-z0-9]+"
+    },
+    "id": {
+      "type": "number"
+    },
+    "lastName": {
+      "type": "string",
+      "pattern": "[a-z0-9]+"
+    }
+  },
+  "type": "object"
+}

@@ -1,4 +1,4 @@
 {
-  "User": { "$ref": "./users/swagger-definitions.json"}
+  "User": { "$ref": "./users/schema.json"}
 }
 

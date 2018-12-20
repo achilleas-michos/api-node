@@ -1,0 +1,48 @@
+{
+  "get": {
+    "summary": "Gets a paginated list of users.",
+    "produces": [
+      "application/json"
+    ],
+    "responses": {
+      "200": {
+        "description": "List of users",
+        "schema": {
+          "$ref": "#/definitions/User"
+        }
+      }
+    }
+  },
+  "count": {
+    "summary": "Counts existing user entries.",
+    "responses": {
+      "200": {
+        "description": "Count users users"
+      }
+    }
+  },
+  "put": {
+    "summary": "Add new user.",
+    "parameters": [
+      {
+        "name": "user",
+        "in": "body",
+        "schema": {
+          "$ref": "#/definitions/User"
+        },
+        "required": false
+      }
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "responses": {
+      "200": {
+        "description": "Add the user provided as json",
+        "schema": {
+          "$ref": "#/definitions/User"
+        }
+      }
+    }
+  }
+}
