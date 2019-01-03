@@ -59,5 +59,12 @@
 
     /* Advanced Options */
     "resolveJsonModule": true                 /* Include modules imported with '.json' extension */
-  }
+  },
+  "include": [
+    "api/**/*.ts",
+    "api/**/*.json"
+  ],
+  "exclude": [
+    "api/**/*spec.ts"
+  ]
 }

@@ -1,5 +1,5 @@
 # Build
-FROM        node:11.4.0-alpine as builder
+FROM        node:11.6.0-alpine as builder
 
 COPY        package.json /web.api/
 COPY        tsconfig.json /web.api/
@@ -12,7 +12,7 @@ RUN         yarn install --production
 RUN         yarn run build
 
 # Deploy
-FROM        node:11.4.0-alpine
+FROM        node:11.6.0-alpine
 
 LABEL       "maintainer"="Achilleas Michos <achilleas.michos@gmail.com>"
 LABEL       "description"="This is the Docker container that will provide all web API services for the app"

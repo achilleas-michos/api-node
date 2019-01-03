@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "clean": "rm -rf dist",
-    "lint": "tslint -c tslint.json -p tsconfig.json",
+    "lint": "tslint -c tslint.json -p tsconfig.json --fix",
     "tsc": "tsc -p .",
     "test": "mocha -r ts-node/register --recursive \"./api/**/*.spec.ts\"",
     "build": "npm-run-all clean lint tsc",
