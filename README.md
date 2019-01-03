@@ -14,7 +14,7 @@ This is an effort to create a sample project for a Restful API written in Node.j
 
 Using the latest Node.js runtime (v. 11.6.0 at the time of writing) with express (v. 4.16.4). The code is written in typescript (v. 3.2.2).
 
-![](docs\folder-structure.png)
+![](https://github.com/achilleas-michos/api-node/blob/master/docs/folder-structure.png)
 
 The configuration in "tsconfig" is as seen below. We are compiling to ES3 for backwards compatibility. 
 
@@ -133,7 +133,7 @@ Instead, it only handles high level configuration, such as host address and api 
 }
 ```
 
-![](C:\Users\micho\Github\api-node\docs\modules-folder.png)
+![](https://github.com/achilleas-michos/api-node/blob/master/docs/modules-folder.png)
 
 ### High level paths
 
